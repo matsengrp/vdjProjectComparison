@@ -30,7 +30,8 @@ while read LINE; do
 done <./inputDir/biobox.yml
 INPUTFILE=$mixcr_inputfile
 #if the input file is in csv or tsv format run conversion scripts into fasta
-#echo ${INPUTFILE: -5}
+echo ${INPUTFILE: -5}
+echo $(pwd)
 if [ ${INPUTFILE: -5} == ".csv" ] ; then
 	#run csv conversion script
 	echo '  RUNNING CSV CONVERSION'
@@ -53,7 +54,7 @@ CMD=$CMD1$CMD2$CMD3
 echo -n 'Running command: '
 echo $CMD
 eval $CMD
-echo 'PROCESS COMPLETED'
+echo 'SHELL SCRIPT PROCESS COMPLETED'
 
 
 
