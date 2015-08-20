@@ -4,12 +4,13 @@
 #==============================
 #Importing relevant modules
 import subprocess
+import os
 #==============================
 #name of original simulated data file
-inputData = 'simulatedDataFiles/simu-10-leaves-1-mutate.csv'
+#inputData = 'simulatedDataFiles/simu-10-leaves-1-mutate.csv'
 #==============================
 #Create an empty text file that will store the percent of correct gene calls per project
-dataFileName = 'dataFile.txt'
+dataFileName = 'dataFile.'
 dataFile = open(dataFileName, 'w')
 dataFile.close()
 #==============================
@@ -23,9 +24,15 @@ action = actions[index]
 print 'You have selected: '+action
 #==============================
 #TBI:
-#if action == 'Compare current bioboxes':
+if action == 'Compare current bioboxes':
 	#if data file is empty, print error message and break
+	if os.stat(dataFileName).st_size == 0:
+		print 'There are currently no bioboxes listed'
+		break
 	#else parse data file and print comparison   
+	else:
+		dataDict = {}			 
+		
 #==============================
 #Adds a new biobox into dataFile.txt, dataFile.txt is basically a dictionary with keys containing the names of the bioboxes and values containing the path to their output directory (not plot performance data)
 #NOTE: to add a new biobox, the directory must be in the same directory as this script
