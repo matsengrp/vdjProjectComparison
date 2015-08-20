@@ -1,0 +1,14 @@
+MANUAL FOR BIOBOX CONTAINING PROJECT PARTIS
+#7-30-15
+==============================
+1. Git clone this repository: https://github.com/matsengrp/bioboxpartis
+2. Navigate into the input_data directory and run YamlFileGenerator.py. Here you will enter all the parameters for generating the input. Make sure the resulting file (biobox.yml) is in the input_data directory. 
+3. Navigate back to the main directory and build the docker image from the docker file "docker build -t <name of image> ."
+4. Now you will actually run the program using this docker command: docker run --volume="$(pwd)/input_data:/bbx/input:ro" --volume="$(pwd)/output_data:/bbx/output:rw" <name of image> default
+
+You should now see the output files in the directory you specified. 
+==============================
+-You must have docker installed to run this program. 
+-The task is always set to default; the only changes in the program occur inside the input yaml file you generate. 
+-the --volume tags in the Docker command will link the directory on your local machine to directories within the docker container
+==============================

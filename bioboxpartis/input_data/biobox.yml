@@ -1,0 +1,7 @@
+cacheparameters:
+  isdata: true
+  nmaxqueries: ''
+  parameterdir: ''
+  plotdir: ''
+  seqfile: ''
+  skipunproductive: true
