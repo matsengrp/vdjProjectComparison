@@ -5,10 +5,15 @@ The main script (comparison.py) runs comparisons for the percent of correct gene
 The current possible actions of comparison include:
 -add new biobox: add a new biobox to the list for comparisons 
 -compare current bioboxes: output comparisons of current bioboxes into a csv file
+-running with different simulated data files
 
 Standards necessary for biobox comparison:
 In addition to the standards mentioned on http://bioboxes.org/ all bioboxes must have the following:
+-script to run plotperformance
 -Input yaml file generator 
--Shell script to automate the docker commands as well as writing to dataFile.txt
+-Shell script to automate the docker commands, calling plot script, writing to dataFile.txt
+-Must have ROOT installed to run comparisons 
 Projects partis and mixcr contain example scripts. 
 
+Current known problems:
+-lots of packages that support plot performance such as root need to be installed
